@@ -79,7 +79,7 @@ reporter: [
     // ✅ Reuse workflow state
     // storageState: 'storage/workflow-state.json',
 
-    headless: browserMode(),
+    headless: true,
     viewport: null,
     actionTimeout: 5000,
     navigationTimeout: 60000,
