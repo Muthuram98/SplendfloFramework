@@ -1,0 +1,149 @@
+{
+  "cookies": [
+    {
+      "name": "timezoneOffset",
+      "value": "330",
+      "domain": "test.spendflo.com",
+      "path": "/",
+      "expires": 1797951172,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_BEAMER_FILTER_BY_URL_vEFneHiS54278",
+      "value": "false",
+      "domain": ".test.spendflo.com",
+      "path": "/",
+      "expires": 1766416341,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "_BEAMER_USER_ID_vEFneHiS54278",
+      "value": "175e7c38-6a54-4d9a-ac38-d5874bbf7400",
+      "domain": ".spendflo.com",
+      "path": "/",
+      "expires": 1792335188,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "_BEAMER_FIRST_VISIT_vEFneHiS54278",
+      "value": "2025-12-22T14:53:08.504Z",
+      "domain": ".spendflo.com",
+      "path": "/",
+      "expires": 1792335188,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "_BEAMER_FILTER_BY_URL_vEFneHiS54278",
+      "value": "false",
+      "domain": ".spendflo.com",
+      "path": "/",
+      "expires": 1766416341,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "g_state",
+      "value": "{\"i_l\":0,\"i_ll\":1766415190456,\"i_b\":\"tQwEqfTvxceKLk2jnW0IPA9td9YvFOeNgawj+Jn4Wbo\",\"i_e\":{\"enable_itp_optimization\":0}}",
+      "domain": "test.spendflo.com",
+      "path": "/",
+      "expires": 1781967190,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "fe_refresh_79157627276f-4bb1-9030-2522da8f9531",
+      "value": "2ed91be4-03ce-4e02-a270-c40e39a91842",
+      "domain": ".auth-test.spendflo.com",
+      "path": "/",
+      "expires": 1769007194.948256,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "fe_device_ae11fd36f9214f2fb082c58fb9c37823",
+      "value": "d3147816-41ab-4e74-870d-23a839d95917",
+      "domain": ".auth-test.spendflo.com",
+      "path": "/",
+      "expires": 1800975194.948578,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "SESSION_ID",
+      "value": "s%3A6948cb82e0f5f83eb77cd1f8%3A10bdc946-dd40-41c0-8d6f-53248a280f11.agpSELvVOBYxZmroE3O0o5hI4G03mQHAU3WSi8y%2FtlY",
+      "domain": "test-api.spendflo.com",
+      "path": "/",
+      "expires": 1768181656.418112,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    }
+  ],
+  "origins": [
+    {
+      "origin": "https://test.spendflo.com",
+      "localStorage": [
+        {
+          "name": "current-theme",
+          "value": "\"VERSION_3\""
+        },
+        {
+          "name": "preferred-login-method",
+          "value": "main"
+        },
+        {
+          "name": "_BEAMER_HEADER_COLOR_vEFneHiS54278",
+          "value": "#fdf5f9"
+        },
+        {
+          "name": "LASTEST_SESSIONS_UPDATE_KEY",
+          "value": "1766415199265"
+        },
+        {
+          "name": "current_user_v2",
+          "value": "{\"email\":\"muthuram.g@trackdfect.com\",\"organization\":\"6948cad094b433b6f194d11d\",\"department\":\"Quality Assurance\"}"
+        },
+        {
+          "name": "FRONTEGG_CODE_VERIFIER",
+          "value": "3fff0af2-0797-406c-b2e2-d17d5af2999f4d5c5860-257f-4ea6-bada-0c9dd7cd5480"
+        },
+        {
+          "name": "_BEAMER_FIRST_VISIT_vEFneHiS54278",
+          "value": "2025-12-22T14:53:08.504Z"
+        },
+        {
+          "name": "_BEAMER_FILTER_BY_URL_vEFneHiS54278",
+          "value": "false"
+        },
+        {
+          "name": "_BEAMER_USER_ID_vEFneHiS54278",
+          "value": "175e7c38-6a54-4d9a-ac38-d5874bbf7400"
+        },
+        {
+          "name": "userId",
+          "value": "ae11fd36-f921-4f2f-b082-c58fb9c37823"
+        },
+        {
+          "name": "SFLocal",
+          "value": "{\"contracts\":{\"pricing\":[],\"shouldShowPricingDecision\":true,\"productAndVendor\":{\"selectedSubProductList\":[],\"vendorOrgType\":{\"title\":\"Vendor\",\"value\":\"VENDOR\"},\"reseller\":null},\"contractsData\":{\"requester\":null,\"startDate\":null,\"endDate\":null,\"isAutoRenewable\":{\"title\":\"No\",\"value\":false,\"disabled\":false},\"autoRenewalTermInMonths\":null,\"noticePeriodForCancellationInDays\":null,\"currency\":\"USD\",\"invoiceDate\":null,\"cost\":null,\"selectedBillingType\":null,\"billingFrequencyInMonths\":null,\"selectedPaymentTerm\":null,\"paymentTermsInDays\":null,\"creditCardExpirationDate\":null,\"billedDayOfTheMonth\":null,\"creditCardNumber\":null,\"creditCardName\":null,\"isProcuredBySpendflo\":{\"title\":\"No\",\"value\":false,\"disabled\":false},\"inSpendfloPipeline\":{\"title\":\"No\",\"value\":false,\"disabled\":false}},\"othersData\":{\"followersList\":[],\"daysToSendNotification\":[{\"id\":\"8ce98d6a-299f-4690-a0a4-8ab0aa9c5b2d\",\"days\":3,\"isEdited\":false},{\"id\":\"432c1e84-569f-49dd-819f-a2b97c523ee4\",\"days\":30,\"isEdited\":false},{\"id\":\"03b1c026-69ff-4b0c-9be9-73299764b02c\",\"days\":60,\"isEdited\":false},{\"id\":\"1b4f9ee6-d7fb-45db-8a5d-c7eb650f11d0\",\"days\":120,\"isEdited\":false}],\"vendorName\":\"\",\"vendorEmail\":\"\",\"vendorPhoneNumber\":\"\",\"selectedSubProduct\":null,\"scratchDocuments\":[],\"selectedContracts\":[]},\"contractType\":\"LONG_TERM\",\"orderId\":null,\"isEditContract\":false,\"contractId\":\"\"},\"contractsV2\":{\"shouldShowPricingDecision\":true,\"productAndVendor\":{\"selectedSubProductList\":[],\"vendorOrgType\":{\"title\":\"Vendor\",\"value\":\"VENDOR\"},\"reseller\":null,\"docIdUploadedForEditContract\":null},\"contractsData\":{\"requester\":null,\"startDate\":null,\"nextBillingDate\":null,\"endDate\":null,\"isAutoRenewable\":\"No\",\"autoRenewalTermInMonths\":null,\"noticePeriodForCancellationInDays\":null,\"currency\":\"USD\",\"invoiceDate\":null,\"cost\":null,\"selectedBillingType\":null,\"billingFrequencyInMonths\":null,\"selectedPaymentTerm\":null,\"paymentTermsInDays\":null,\"firstQuote\":null,\"savings\":null,\"isProcuredBySpendflo\":null},\"pricingData\":{\"pricingDetailList\":[]},\"othersData\":{\"daysToSendNotification\":[{\"id\":\"8aada008-43f7-4232-8e45-57e2fa3d6c93\",\"days\":3,\"isEdited\":false},{\"id\":\"a04bc092-5bd5-41e6-a7ef-ace43349af2c\",\"days\":30,\"isEdited\":false},{\"id\":\"6bdeecb6-b61f-47f3-8fa7-88e7f386a17e\",\"days\":60,\"isEdited\":false},{\"id\":\"0977d433-3576-4ddf-adad-8856bf2d33e7\",\"days\":120,\"isEdited\":false}]},\"contractType\":\"LONG_TERM\",\"orderId\":null,\"isEditContract\":false,\"contractId\":\"\",\"sourcePage\":\"CONTRACTS\"},\"contractsV3\":{\"shouldShowPricingDecision\":true,\"vendorDetails\":{\"docIdUploadedForEditContract\":null,\"vendor\":null},\"contractsData\":{\"contractOwner\":null,\"startDate\":null,\"nextBillingDate\":null,\"endDate\":null,\"isAutoRenewable\":\"No\",\"autoRenewalTermInMonths\":null,\"noticePeriodForCancellationInDays\":null,\"invoiceDate\":null,\"cost\":null,\"selectedBillingType\":null,\"billingFrequencyInMonths\":null,\"selectedPaymentTerm\":null,\"paymentTermsInDays\":null,\"firstQuote\":null,\"savings\":null,\"isProcuredBySpendflo\":null},\"pricingData\":{\"pricingDetailList\":[]},\"othersData\":{\"daysToSendNotification\":[{\"id\":\"23ffc96c-fd9f-4b81-961e-17475e82bcee\",\"days\":3,\"isEdited\":false},{\"id\":\"654c66cc-2532-4539-b3e3-4b3aee91ab66\",\"days\":30,\"isEdited\":false},{\"id\":\"caee8e94-47b8-40d1-baf4-e4691b868d90\",\"days\":60,\"isEdited\":false},{\"id\":\"70f267a8-a2b4-458a-96ca-c666b0f6f775\",\"days\":120,\"isEdited\":false}]},\"contractType\":\"LONG_TERM\",\"contractCategory\":\"SOFTWARE\",\"contractMethod\":\"SMART_SCAN\",\"orderId\":null,\"isEditContract\":false,\"contractId\":\"\",\"parentContractId\":null,\"sourcePage\":\"CONTRACTS\",\"agreementDataFieldsFromRequestMapping\":{\"contractDataMappedKeys\":[],\"pricingDetailMappedKeys\":[]}},\"sampleData\":{\"isDemoToggled\":false},\"requestIntake\":{\"products\":{\"productLineItems\":[],\"additionalDetails\":\"\",\"upgradeDueDate\":null},\"contract\":{\"dueDate\":null,\"contractType\":null,\"contractLengthInMonths\":null},\"vendor\":{\"accountExecutiveEmail\":null,\"reviewOwnerEmail\":\"\",\"integrationWithOtherSystems\":null,\"systemNames\":null,\"reviewOwner\":null,\"vendorAccessToDataCheckIds\":[],\"isNoneOfTheAboveChecked\":false,\"noneOfTheAboveComment\":\"\",\"isVendorInformed\":false},\"preApproval\":{\"preApprovalDueDate\":null,\"preApprovalGroup\":null},\"requestType\":null,\"contractId\":null,\"isDueDiligenceEnabled\":null,\"vendorName\":null,\"softwareName\":null,\"isPreApprovalEnabled\":false,\"selectedContract\":null,\"renewalFlow\":null,\"vendorId\":null,\"availableDueDiligenceId\":null},\"settings\":{\"isOnboardingNoVerify\":false},\"savedFilterViews\":{\"savedFilterViews\":[]},\"renewalIntelligence\":{\"vendors\":[],\"isLoading\":false,\"lastUpdated\":null}}"
+        },
+        {
+          "name": "sessions",
+          "value": "{\"user\":{\"_id\":\"6948cb82e0f5f83eb77cd1f8\",\"id\":\"6948cb82e0f5f83eb77cd1f8\",\"name\":\"Muthuram (TrackDfect)\",\"email\":\"muthuram.g@trackdfect.com\",\"frontEggId\":\"ae11fd36-f921-4f2f-b082-c58fb9c37823\",\"meta\":{},\"department\":\"Quality Assurance\",\"predefinedDepartment\":\"Quality Assurance\",\"roles\":[\"ADMIN\"],\"organization\":{\"id\":\"6948cad094b433b6f194d11d\",\"name\":\"Track defect\",\"organizationName\":\"Track defect\",\"types\":[\"DEMO\"],\"csm\":{\"user\":{\"id\":\"68770eb3c41e7d79eff703d0\"},\"contracts\":[{\"annualContractValue\":7500,\"annualContractValueCostObj\":{\"rawCost\":7500,\"rawCurrency\":\"USD\",\"standardCost\":7500,\"standardCurrency\":\"USD\",\"reportingCost\":7500,\"reportingCurrency\":\"USD\",\"appoximated\":false,\"reportingDate\":\"2025-12-18T18:30:00.000Z\"},\"awardedToSpendflo\":7500,\"awardedToSpendfloCostObj\":{\"rawCost\":7500,\"rawCurrency\":\"USD\",\"standardCost\":7500,\"standardCurrency\":\"USD\",\"reportingCost\":7500,\"reportingCurrency\":\"USD\",\"appoximated\":false,\"reportingDate\":\"2025-12-18T18:30:00.000Z\"},\"contractLength\":12,\"contractStartDate\":\"2025-12-18T18:30:00.000Z\",\"guaranteedSavings\":7000,\"guaranteedSavingsCostObj\":{\"rawCost\":7000,\"rawCurrency\":\"USD\",\"standardCost\":7000,\"standardCurrency\":\"USD\",\"reportingCost\":7000,\"reportingCurrency\":\"USD\",\"appoximated\":false,\"reportingDate\":\"2025-12-18T18:30:00.000Z\"},\"minimimRequiredSpend\":7500,\"minimimRequiredSpendCostObj\":{\"rawCost\":7500,\"rawCurrency\":\"USD\",\"standardCost\":7500,\"standardCurrency\":\"USD\",\"reportingCost\":7500,\"reportingCurrency\":\"USD\",\"appoximated\":false,\"reportingDate\":\"2025-12-18T18:30:00.000Z\"},\"potentialRequiredSpend\":7500,\"potentialRequiredSpendCostObj\":{\"rawCost\":7500,\"rawCurrency\":\"USD\",\"standardCost\":7500,\"standardCurrency\":\"USD\",\"reportingCost\":7500,\"reportingCurrency\":\"USD\",\"appoximated\":false,\"reportingDate\":\"2025-12-18T18:30:00.000Z\"},\"potentialSavingsEstimate\":7500,\"potentialSavingsEstimateCostObj\":{\"rawCost\":7500,\"rawCurrency\":\"USD\",\"standardCost\":7500,\"standardCurrency\":\"USD\",\"reportingCost\":7500,\"reportingCurrency\":\"USD\",\"appoximated\":false,\"reportingDate\":\"2025-12-18T18:30:00.000Z\"}}]},\"em\":{\"id\":\"64d619e3a154bb1dc0fd1b0c\"},\"region\":\"NAMER\",\"domains\":[\"trackdfect.com\"],\"pointsOfContact\":[]},\"onboardingStep\":2,\"type\":\"ADMIN\",\"isSpendfloUser\":true,\"sources\":[\"SPENDFLO\"],\"departments\":[]},\"services\":[{\"section\":\"General\",\"feature\":\"VendorTrust\",\"enabled\":false},{\"section\":\"SSO Integrations\",\"feature\":\"GoogleWorkspaceNoEmailApp\",\"enabled\":false,\"description\":\"This app helps you with showing insights and doesnt ask for email permissions. Please do not toggle the other GoogleWorkspace\"},{\"section\":\"SSO Integrations\",\"feature\":\"Jumpcloud\",\"enabled\":false},{\"section\":\"Engineering\",\"feature\":\"SelfServe\",\"enabled\":true},{\"section\":\"Engineering\",\"feature\":\"PreApprovalPizzaTracker\",\"enabled\":true},{\"section\":\"General\",\"feature\":\"SmartScan\",\"enabled\":true},{\"section\":\"Engineering\",\"feature\":\"NotificationsV2\",\"enabled\":true},{\"section\":\"Engineering\",\"feature\":\"Analytics\",\"enabled\":true},{\"section\":\"Engineering\",\"feature\":\"AnalyticsSpend\",\"enabled\":true},{\"section\":\"General\",\"feature\":\"SentimentHub\",\"enabled\":false},{\"section\":\"SSO Integrations\",\"feature\":\"Okta\",\"enabled\":false},{\"section\":\"Engineering\",\"feature\":\"AWS\",\"enabled\":false},{\"section\":\"Engineering\",\"feature\":\"AWSUnUsedResources\",\"enabled\":false},{\"section\":\"SSO Integrations\",\"feature\":\"AzureActiveDirectory\",\"enabled\":false},{\"section\":\"Engineering\",\"feature\":\"Appbar\",\"enabled\":true,\"version\":1},{\"section\":\"General\",\"feature\":\"Reports\",\"enabled\":false},{\"section\":\"SSO Integrations\",\"feature\":\"GoogleWorkspaceApp\",\"enabled\":false,\"description\":\"This legacy feature is currently disabled and cannot be toggled.\"},{\"section\":\"Finance Integrations\",\"feature\":\"QuickBooksOnline\",\"enabled\":false},{\"section\":\"Finance Integrations\",\"feature\":\"NetSuite\",\"enabled\":false},{\"section\":\"Finance Integrations\",\"feature\":\"Xero\",\"enabled\":false},{\"section\":\"Finance Integrations\",\"feature\":\"FreeAgent\",\"enabled\":false},{\"section\":\"HRMS Integrations\",\"feature\":\"BambooHR\",\"enabled\":false},{\"section\":\"Finance Integrations\",\"feature\":\"Moneybird\",\"enabled\":false},{\"section\":\"Finance Integrations\",\"feature\":\"SageBusinessCloudAccounting\",\"enabled\":false},{\"section\":\"Finance Integrations\",\"feature\":\"ZohoBooks\",\"enabled\":false},{\"section\":\"General\",\"feature\":\"Licences\",\"enabled\":false},{\"section\":\"Licenses\",\"feature\":\"Asana\",\"enabled\":false},{\"section\":\"Licenses\",\"feature\":\"Salesforce\",\"enabled\":false},{\"section\":\"Licenses\",\"feature\":\"HubSpot\",\"enabled\":false},{\"section\":\"Licenses\",\"feature\":\"Adobe\",\"enabled\":false},{\"section\":\"Licenses\",\"feature\":\"GitHub\",\"enabled\":false},{\"section\":\"Licenses\",\"feature\":\"Datadog\",\"enabled\":false},{\"section\":\"Licenses\",\"feature\":\"Jira\",\"enabled\":false},{\"section\":\"Licenses\",\"feature\":\"Confluence\",\"enabled\":false},{\"section\":\"Licenses\",\"feature\":\"Snowflake\",\"enabled\":false},{\"section\":\"HRMS Integrations\",\"feature\":\"OneLoginHRMS\",\"enabled\":false},{\"section\":\"HRMS Integrations\",\"feature\":\"Freshteam\",\"enabled\":false},{\"section\":\"Licenses\",\"feature\":\"Freshdesk\",\"enabled\":false},{\"section\":\"Licenses\",\"feature\":\"Zendesk\",\"enabled\":false},{\"section\":\"Licenses\",\"feature\":\"Figma\",\"enabled\":false},{\"section\":\"Licenses\",\"feature\":\"Mondaycom\",\"enabled\":false},{\"section\":\"HRMS Integrations\",\"feature\":\"Hibob\",\"enabled\":false},{\"section\":\"Engineering\",\"feature\":\"CustomMappingRule\",\"enabled\":true},{\"section\":\"SSO Integrations\",\"feature\":\"OneLoginSSO\",\"enabled\":false},{\"section\":\"Licenses\",\"feature\":\"Atlassian\",\"enabled\":false},{\"section\":\"Engineering\",\"feature\":\"SlackBotV2\",\"enabled\":true},{\"section\":\"Licenses\",\"feature\":\"AdobeMarketoEngage\",\"enabled\":false},{\"section\":\"Licenses\",\"feature\":\"DocuSign\",\"enabled\":false},{\"section\":\"Licenses\",\"feature\":\"Calendly\",\"enabled\":false},{\"section\":\"Engineering\",\"feature\":\"ContractsTabV2\",\"enabled\":true},{\"section\":\"Engineering\",\"feature\":\"OrderNegotiationIntakeV2\",\"enabled\":true},{\"section\":\"Licenses\",\"feature\":\"Trello\",\"enabled\":false},{\"section\":\"Licenses\",\"feature\":\"Tableau\",\"enabled\":false},{\"section\":\"Licenses\",\"feature\":\"ClickUp\",\"enabled\":false},{\"section\":\"Licenses\",\"feature\":\"PagerDuty\",\"enabled\":false},{\"section\":\"Licenses\",\"feature\":\"Airtable\",\"enabled\":false},{\"section\":\"Licenses\",\"feature\":\"Box\",\"enabled\":false},{\"section\":\"Finance Integrations\",\"feature\":\"SageIntacct\",\"enabled\":false},{\"section\":\"Licenses\",\"feature\":\"Outreach\",\"enabled\":false},{\"section\":\"Licenses\",\"feature\":\"Looker\",\"enabled\":false},{\"section\":\"Licenses\",\"feature\":\"BrowserStack\",\"enabled\":false},{\"section\":\"Engineering\",\"feature\":\"LicenceCost\",\"enabled\":false},{\"section\":\"Engineering\",\"feature\":\"ApproverGroupChange\",\"enabled\":true},{\"section\":\"Licenses\",\"feature\":\"Zoom\",\"enabled\":false},{\"section\":\"Engineering\",\"feature\":\"AuthorisedDate\",\"enabled\":false},{\"section\":\"Engineering\",\"feature\":\"ATSMetricCorrection\",\"enabled\":true},{\"section\":\"General\",\"feature\":\"DesignV3\",\"enabled\":true},{\"section\":\"Engineering\",\"feature\":\"SavedFilters\",\"enabled\":true},{\"section\":\"Licenses\",\"feature\":\"Freshservice\",\"enabled\":false},{\"section\":\"Licenses\",\"feature\":\"LastPass\",\"enabled\":false},{\"section\":\"Licenses\",\"feature\":\"Smartsheet\",\"enabled\":false},{\"section\":\"Licenses\",\"feature\":\"Pipedrive\",\"enabled\":false},{\"section\":\"Licenses\",\"feature\":\"Salesloft\",\"enabled\":false},{\"section\":\"Licenses\",\"feature\":\"Canva\",\"enabled\":false},{\"section\":\"Licenses\",\"feature\":\"Typeform\",\"enabled\":false},{\"section\":\"Engineering\",\"feature\":\"SharableRenewalCalendar\",\"enabled\":true},{\"section\":\"Engineering\",\"feature\":\"CompareUsers\",\"enabled\":true},{\"section\":\"SSO Integrations\",\"feature\":\"AzureActiveDirectoryTruto\",\"enabled\":false},{\"section\":\"SSO Integrations\",\"feature\":\"OktaTruto\",\"enabled\":false},{\"section\":\"SSO Integrations\",\"feature\":\"OneLoginTruto\",\"enabled\":false},{\"section\":\"HRMS Integrations\",\"feature\":\"BambooHRTruto\",\"enabled\":false},{\"section\":\"HRMS Integrations\",\"feature\":\"HibobTruto\",\"enabled\":false},{\"section\":\"Finance Integrations\",\"feature\":\"QuickBooksOnlineTruto\",\"enabled\":false},{\"section\":\"Finance Integrations\",\"feature\":\"XeroTruto\",\"enabled\":false},{\"section\":\"Finance Integrations\",\"feature\":\"ZohoBooksTruto\",\"enabled\":false},{\"section\":\"Finance Integrations\",\"feature\":\"NetsuiteTruto\",\"enabled\":false},{\"section\":\"General\",\"feature\":\"SimilarProductsReport\",\"enabled\":true},{\"section\":\"Engineering\",\"feature\":\"JournalEntryAsSpend\",\"enabled\":false},{\"section\":\"General\",\"feature\":\"Workflows\",\"enabled\":true},{\"section\":\"General\",\"feature\":\"Unification\",\"enabled\":true},{\"section\":\"Engineering\",\"feature\":\"RemoveVisits\",\"enabled\":false},{\"section\":\"Engineering\",\"feature\":\"DLMJobs\",\"enabled\":false},{\"section\":\"General\",\"feature\":\"Renewals\",\"enabled\":true},{\"section\":\"General\",\"feature\":\"IntegrationsForWorkflow\",\"enabled\":false},{\"section\":\"Finance Integrations\",\"feature\":\"Coupa\",\"enabled\":false},{\"section\":\"Engineering\",\"feature\":\"SlackChannelListing\",\"enabled\":false},{\"section\":\"Ticketing Integrations\",\"feature\":\"JiraForWorkflow\",\"enabled\":true},{\"section\":\"AI Features\",\"feature\":\"IntakeBot\",\"enabled\":false},{\"section\":\"AI Features\",\"feature\":\"AdoptAi\",\"enabled\":false},{\"section\":\"Licenses\",\"feature\":\"VeevaVault\",\"enabled\":false},{\"section\":\"Engineering\",\"feature\":\"PurchaseOrder\",\"enabled\":false},{\"section\":\"CLM Integrations\",\"feature\":\"Ironclad\",\"enabled\":false},{\"section\":\"CLM Integrations\",\"feature\":\"LinkSquares\",\"enabled\":false},{\"section\":\"Engineering\",\"feature\":\"PrivateEquityDashboard\",\"enabled\":false},{\"section\":\"Ticketing Integrations\",\"feature\":\"JiraServiceManagement\",\"enabled\":false},{\"section\":\"AI Features\",\"feature\":\"DocumentAnalyserAgent\",\"enabled\":false},{\"section\":\"AI Features\",\"feature\":\"VendorIntelligence\",\"enabled\":false},{\"section\":\"AI Features\",\"feature\":\"RenewalAgent\",\"enabled\":false},{\"section\":\"E-Signature Integrations\",\"feature\":\"DocusignForWorkflow\",\"enabled\":false},{\"section\":\"General\",\"feature\":\"HideUsages\",\"enabled\":false,\"description\":\"If true, Hides the app page, user-engagement and access risk report and offerings in vendors\"},{\"section\":\"Engineering\",\"feature\":\"VendorOnboarding\",\"enabled\":false},{\"section\":\"Engineering\",\"feature\":\"UseStoredFinanceDataIngestion\",\"enabled\":false,\"description\":\"If true, use stored finance data from s3 for ingestion instead of fetching data via api\"}],\"sessionOrganization\":{\"id\":\"6948cad094b433b6f194d11d\",\"name\":\"Track defect\",\"organizationName\":\"Track defect\",\"types\":[\"DEMO\"],\"csm\":{\"user\":{\"id\":\"68770eb3c41e7d79eff703d0\"},\"contracts\":[{\"annualContractValue\":7500,\"annualContractValueCostObj\":{\"rawCost\":7500,\"rawCurrency\":\"USD\",\"standardCost\":7500,\"standardCurrency\":\"USD\",\"reportingCost\":7500,\"reportingCurrency\":\"USD\",\"appoximated\":false,\"reportingDate\":\"2025-12-18T18:30:00.000Z\"},\"awardedToSpendflo\":7500,\"awardedToSpendfloCostObj\":{\"rawCost\":7500,\"rawCurrency\":\"USD\",\"standardCost\":7500,\"standardCurrency\":\"USD\",\"reportingCost\":7500,\"reportingCurrency\":\"USD\",\"appoximated\":false,\"reportingDate\":\"2025-12-18T18:30:00.000Z\"},\"contractLength\":12,\"contractStartDate\":\"2025-12-18T18:30:00.000Z\",\"guaranteedSavings\":7000,\"guaranteedSavingsCostObj\":{\"rawCost\":7000,\"rawCurrency\":\"USD\",\"standardCost\":7000,\"standardCurrency\":\"USD\",\"reportingCost\":7000,\"reportingCurrency\":\"USD\",\"appoximated\":false,\"reportingDate\":\"2025-12-18T18:30:00.000Z\"},\"minimimRequiredSpend\":7500,\"minimimRequiredSpendCostObj\":{\"rawCost\":7500,\"rawCurrency\":\"USD\",\"standardCost\":7500,\"standardCurrency\":\"USD\",\"reportingCost\":7500,\"reportingCurrency\":\"USD\",\"appoximated\":false,\"reportingDate\":\"2025-12-18T18:30:00.000Z\"},\"potentialRequiredSpend\":7500,\"potentialRequiredSpendCostObj\":{\"rawCost\":7500,\"rawCurrency\":\"USD\",\"standardCost\":7500,\"standardCurrency\":\"USD\",\"reportingCost\":7500,\"reportingCurrency\":\"USD\",\"appoximated\":false,\"reportingDate\":\"2025-12-18T18:30:00.000Z\"},\"potentialSavingsEstimate\":7500,\"potentialSavingsEstimateCostObj\":{\"rawCost\":7500,\"rawCurrency\":\"USD\",\"standardCost\":7500,\"standardCurrency\":\"USD\",\"reportingCost\":7500,\"reportingCurrency\":\"USD\",\"appoximated\":false,\"reportingDate\":\"2025-12-18T18:30:00.000Z\"}}]},\"em\":{\"id\":\"64d619e3a154bb1dc0fd1b0c\"},\"region\":\"NAMER\",\"domains\":[\"trackdfect.com\"],\"pointsOfContact\":[]},\"sessionOrganizationSettings\":{\"id\":\"6948cad080fd420c01ed2cb1\",\"organization\":\"6948cad094b433b6f194d11d\",\"onboardingSettings\":{\"isOnboardingRequired\":true,\"steps\":[{\"category\":\"PROCUREMENT_CHECKLIST\",\"isCompleted\":false,\"isSkipped\":false},{\"category\":\"APPROVAL_GROUP\",\"isCompleted\":false,\"isSkipped\":false},{\"category\":\"SSO\",\"isCompleted\":false,\"isSkipped\":false},{\"category\":\"FINANCE\",\"isCompleted\":false,\"isSkipped\":false},{\"category\":\"COMMUNICATION\",\"isCompleted\":false,\"isSkipped\":false},{\"category\":\"EXTENSION\",\"isCompleted\":false,\"isSkipped\":false},{\"category\":\"HRMS\",\"isCompleted\":false,\"isSkipped\":false},{\"category\":\"INVITE_USERS\",\"isCompleted\":false,\"isSkipped\":false},{\"category\":\"CONTRACT_CREATED\",\"isCompleted\":false,\"isSkipped\":false},{\"category\":\"WORKFLOW_PUBLISHED\",\"isCompleted\":true,\"isSkipped\":false},{\"category\":\"DLM_INTEGRATED\",\"isCompleted\":false,\"isSkipped\":false},{\"category\":\"VENDOR_IMPORTED\",\"isCompleted\":false,\"isSkipped\":false}],\"_id\":\"694909c51b556d1ebe9a9b7e\"},\"privacySettings\":{\"isOptOutAccessEnabled\":false,\"_id\":\"6948cad094b433b6f194d122\"},\"reportingCurrency\":{\"code\":\"USD\",\"entity\":\"VIRGIN ISLANDS (U.S.)\",\"minorUnit\":\"2\",\"name\":\"US Dollar\",\"numericCode\":840,\"locale\":\"en-US\"},\"industries\":[\"Quality \"],\"segment\":\"SMB\",\"licenceSettings\":{\"inactivityPeriod\":90,\"_id\":\"6948cad094b433b6f194d124\"},\"spendAllocationSettings\":{\"type\":\"ACCESS_BASED\"},\"platformConfig\":\"Platform with Assisted Buying\",\"isSandbox\":true,\"isOffboardingTriggered\":false,\"timeZone\":\"Asia/Kolkata\"},\"sessionUserSettings\":{\"_id\":\"6948cb8280fd420c01ed2cb2\",\"userId\":\"6948cb82e0f5f83eb77cd1f8\",\"usageTrackingSettings\":{\"isOptOut\":false,\"_id\":\"6948cb82e0f5f83eb77cd1fb\"},\"cloudEnabled\":false,\"timezone\":\"Asia/Calcutta\",\"shareable\":{\"monthlyRenewalCalendar\":\"d118da22acb44d3337274bc214229521/calendars/6948cad094b433b6f194d11d/monthly.ics\",\"longTermRenewalCalendar\":\"d118da22acb44d3337274bc214229521/calendars/6948cad094b433b6f194d11d/long-term.ics\"},\"views\":[],\"productTrialSettings\":{\"videos\":{\"MY_TASKS\":{\"viewed\":true,\"lastViewed\":\"2025-12-22T05:12:05.908Z\"},\"REQUESTS\":{\"viewed\":true,\"lastViewed\":\"2025-12-22T05:51:52.698Z\"},\"AGREEMENTS\":{\"viewed\":true,\"lastViewed\":\"2025-12-22T11:18:14.681Z\"}},\"showTrialData\":false},\"createdAt\":\"2025-12-22T04:39:30.297Z\",\"updatedAt\":\"2025-12-22T05:11:37.091Z\",\"__v\":0},\"isLoggedIn\":true}"
+        }
+      ]
+    }
+  ]
+}
