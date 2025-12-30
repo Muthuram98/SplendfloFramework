@@ -38,7 +38,7 @@ mkdirSync(allureResultsDir, { recursive: true });
 
 /** @type {import('@playwright/test').PlaywrightTestConfig} */
 const config = {
-  testDir: './tests',
+  testDir: './runner',
   outputDir: allureResultsDir,
   globalTeardown: './global-teardown.js',
   retries: 0,
@@ -79,7 +79,7 @@ reporter: [
     // ✅ Reuse workflow state
     // storageState: 'storage/workflow-state.json',
 
-    headless: browserMode(),
+    headless: !!process.env.CI,
     viewport: null,
     actionTimeout: 5000,
     navigationTimeout: 60000,

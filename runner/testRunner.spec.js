@@ -18,7 +18,6 @@ ExecutionRegistry.enabledTests = enabledTestIds;
 
 // 🔹 Static imports (MANDATORY)
 import '../tests/TS001_Createworkflow.spec.js';
-// import '../tests/TS002_AggrementVerfication.spec.js';
 import '../tests/TS002_AddAggrement.spec.js';
 
 // Global hook
