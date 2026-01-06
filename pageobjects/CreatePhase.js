@@ -140,6 +140,8 @@ Actual: ${taskToastMessage}`
     await this.keywords.waitUntilVisible(this.cheklistPage, 'Checklist Page');
     await this.keywords.click(this.saveContinue, 'Save & Continue');
 
+    await this.page.waitForTimeout(2000); // Wait for navigation to complete
+
     await this.keywords.waitUntilVisible(this.CompletionMsg, 'Completion Message');
 
     const checklistToastMessage = await this.keywords.getText(
@@ -164,7 +166,8 @@ Actual: ${checklistToastMessage}`
     // ---------------- NOTIFICATIONS ----------------
     await this.keywords.waitUntilVisible(
       this.NotificationsPage,
-      'Notifications Page'
+      'Notifications Page',
+      30000
     );
 
     await this.keywords.click(this.saveContinue, 'Save & Continue');

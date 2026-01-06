@@ -36,6 +36,12 @@ function parseDatasets(datasetStr) {
 const executionData = readExecutionSheet('./testdata/TestExecution.xlsx', 'Sheet1');
 const row = executionData.find(r => r.testCaseId === TEST_ID);
 
+function generateRandomWorkflowName(baseName) {
+  const timestamp = Date.now();
+  const random = Math.floor(Math.random() * 1000);
+  return `${baseName}_${timestamp}`;
+}
+
 if (row && row.flag === 'Yes') {
   const datasets = parseDatasets(row.dataset);
   console.log('Parsed datasets for TS001:', datasets);
@@ -56,6 +62,8 @@ if (row && row.flag === 'Yes') {
      READ EXCEL DATA ONCE
   ========================== */
   const data = await Utils.getAllTestData(TestdataPath, sheetName, dataset);
+
+  data.WorkflowName = generateRandomWorkflowName(data.WorkflowName);
   // data.Url = url; // Override with environment URL
 
   /* =========================

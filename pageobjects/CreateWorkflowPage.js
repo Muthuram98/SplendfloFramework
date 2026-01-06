@@ -81,10 +81,6 @@ export class CreateWorkflowPage {
       'Create Workflow'
     );
 
-  //   const isGuideVisible = await this.page
-  // .locator(this.workflowGuideHeading)
-  // .isVisible();
-
   await this.keywords.click(
     this.closeGuideIcon,
     'Close Workflow Guide'

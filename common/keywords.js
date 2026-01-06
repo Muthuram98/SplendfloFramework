@@ -1,5 +1,6 @@
 import { allure } from 'allure-playwright';
 import { expect } from '@playwright/test';
+import { expectTimeout } from '../config/testConfiguration.js';
 
 let newPage;
 
@@ -56,7 +57,7 @@ export class keywords {
   async click(locator, stepName) {
     await this.step(`Click → ${stepName}`, async () => {
       const element = this.page.locator(locator);
-      await element.waitFor({ state: 'visible', timeout: 120000 });
+      await element.waitFor({ state: 'visible', timeout: 300000 });
       await element.click();
       await this.logs(stepName, 'Clicked successfully');
     });
@@ -208,16 +209,25 @@ async verifyFieldValue(actualValue, expectedValue, fieldName) {
   async fill(locator, value, stepName) {
     await this.step(`Fill → ${stepName}`, async () => {
       const element = this.page.locator(locator);
-      await element.waitFor({ state: 'visible', timeout: 120000 });
+      await element.waitFor({ state: 'visible', timeout: expectTimeout() * 1000 });
       await element.fill(value);
       await this.logs(stepName, `Entered value: ${value}`);
+    });
+  }
+
+  async selectOption(locator, value, stepName) {
+    await this.step(`Select Option → ${stepName}`, async () => {
+      const element = this.page.locator(locator);
+      await element.waitFor({ state: 'visible', timeout: expectTimeout() * 1000 });
+      await element.selectOption({ label: value });
+      await this.logs(stepName, `Selected option: ${value}`);
     });
   }
 
   async clearAndFill(locator, value, stepName) {
     await this.step(`Clear & Fill → ${stepName}`, async () => {
       const element = this.page.locator(locator);
-      await element.waitFor({ state: 'visible', timeout: 120000 });
+      await element.waitFor({ state: 'visible', timeout: expectTimeout() * 1000 });
       await element.fill('');
       await element.fill(value);
       await this.logs(stepName, `Updated value: ${value}`);
@@ -227,7 +237,7 @@ async verifyFieldValue(actualValue, expectedValue, fieldName) {
   async hover(locator, stepName) {
     await this.step(`Hover → ${stepName}`, async () => {
       const element = this.page.locator(locator);
-      await element.waitFor({ state: 'visible', timeout: 65000 });
+      await element.waitFor({ state: 'visible', timeout: expectTimeout() * 1000 });
       await element.hover();
       await this.logs(stepName, 'Hovered successfully');
     });
@@ -272,22 +282,27 @@ async verifyFieldValue(actualValue, expectedValue, fieldName) {
   }
 
   async refreshPage() {
-    await this.step('Refresh Page', async () => {
-      try {
-        await this.page.reload({ waitUntil: 'domcontentloaded', timeout: 10000 });
-        await this.logs('Refresh Page', 'Page refreshed');
-      } catch (error) {
-        await this.logs('Refresh Page', `Page reload failed: ${error.message}`);
-        // Optionally, continue without refreshing
-      }
-    });
-  }
+  await this.step('Refresh Page', async () => {
+   
+    try {
+      await this.page.reload({
+        waitUntil: 'domcontentloaded',
+        timeout: 60000,
+      });
+
+      await this.logs('Refresh Page', 'Page refreshed');
+    } catch (error) {
+      throw new Error(`❌ Page reload failed: ${error.message}`);
+    }
+  });
+}
+
 
   /* =========================================================
      VISIBILITY / WAIT
   ========================================================= */
 
-  async waitUntilVisible(locator, stepName, timeout = 120000) {
+  async waitUntilVisible(locator, stepName, timeout = expectTimeout() * 1000) {
     await this.step(`Wait Until Visible → ${stepName}`, async () => {
       const element = this.page.locator(locator);
       await expect(element).toBeVisible({ timeout });
@@ -366,7 +381,7 @@ async scrollIntoView(locator, elementName = 'Element') {
   async getText(locator, stepName) {
     return await this.step(`Get Text → ${stepName}`, async () => {
       const element = this.page.locator(locator);
-      await element.waitFor({ state: 'visible', timeout: 120000 });
+      await element.waitFor({ state: 'visible', timeout: expectTimeout() * 1000 });
       const text = (await element.textContent())?.trim();
       await this.logs(stepName, `Text captured: ${text}`);
       return text;
@@ -376,7 +391,7 @@ async scrollIntoView(locator, elementName = 'Element') {
   async getAttributeValue(locator, attributeName, stepName) {
     return await this.step(`Get Attribute → ${stepName}`, async () => {
       const element = this.page.locator(locator);
-      await element.waitFor({ state: 'visible', timeout: 65000 });
+      await element.waitFor({ state: 'visible', timeout: expectTimeout() * 1000 });
       const value = await element.getAttribute(attributeName);
       await this.logs(stepName, `Attribute value: ${value}`);
       return value;

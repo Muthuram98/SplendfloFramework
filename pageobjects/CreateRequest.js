@@ -8,41 +8,11 @@ export class CreateRequest {
     this.page = page;
     this.keywords = new keywords(page);
 
-    // this.closeGuideIcon = '(//h2[text()="Workflow Studio Guide"]//following::button)[1]';
-    // this.CreateRequestBtn = '//p[text()="Create a Request"]';
-    // this.ConitnueRequestBtn = '//p[text()="Continue"]';
+    // Static locators
+    this.closeGuideIcon =
+      '(//h2[text()="Workflow Studio Guide"]//following::button)[1]';
 
-    // // Intake
-    // this.Que1Input =
-    //   '//*[text()="What is your name?"]//following::input[contains(@id,"headlessui-input")]';
-    // this.ContinueButton = '//p[text()="Continue"]';
-    // this.Que2Dropdown =
-    //   '//span[text()="Select your gender?"]//following::button[contains(@id,"headlessui-listbox-button")]';
-    // this.Que2SelectOption = '//span[text()="Male"]';
-    // this.Que3SelectOption = '//span[text()="India"]';
-    // this.Que4DateInput = '(//span[text()="Enter your Joining Date"]//following::input)[1]';
-    // this.SubmitAns = '//p[text()="Submit"]';
-
-    // // Success
-    // this.SuccessMsg = '//h2[contains(@id,"headlessui-dialog-title")]';
-    // this.GotoReqDetails = '//p[text()="Go to Request Details"]';
-
-    // // Tasks
-    // this.findTask1 = '//p[contains(text(),"Task1") and contains(text(),"Start")]';
-    // this.findTask2 = '//p[contains(text(),"Task2") and contains(text(),"Start")]';
-    // this.findTask3 = '//p[contains(text(),"Task3") and contains(text(),"Start")]';
-
-    // this.StartButton = '//p[contains(text(),"Start")]';
-    // this.ApproveBtn = '//*[text()="Approve"]';
-
-    // // Task Inputs
-    // this.Task1Que1Input = '//span[text()="What is your name?"]//following::input';
-    // this.Task2Que1Input = '//span[text()="What is your college name?"]//following::input';
-    // this.Task3Que1Input = '//span[text()="What is your company name?"]//following::input';
-
-    this.closeGuideIcon = '(//h2[text()="Workflow Studio Guide"]//following::button)[1]';
     this.CreateRequestBtn = '//p[text()="Create a Request"]';
-    this.ConitnueRequestBtn = '//p[text()="Continue"]';
     this.ContinueButton = '//p[text()="Continue"]';
     this.SubmitAns = '//p[text()="Submit"]';
 
@@ -51,27 +21,30 @@ export class CreateRequest {
 
     this.StartButton = '//p[contains(text(),"Start")]';
     this.ApproveBtn = '//*[text()="Approve"]';
-
   }
 
-    // ===========================
-  // DYNAMIC LOCATORS
-  // ===========================
+  /* ===========================
+     DYNAMIC LOCATORS
+  =========================== */
 
   getWorkflowLocator(workflowName) {
     return `//span[text()="${workflowName}"]`;
   }
 
   getQuestionInput(questionText) {
-    return `//*[text()="${questionText}"]//following::input[contains(@id,"headlessui-input")]`;
+    return `(//*[contains(text(),"${questionText}")]//following::input[1])`;
+  }
+
+  getDateInputByQuestion(questionText) {
+    return `(//*[contains(text(),"${questionText}")]//following::input)[1]`;
   }
 
   getDropdownByQuestion(questionText) {
-    return `//*[text()="${questionText}"]//following::button[contains(@id,"headlessui-listbox-button")]`;
+    return `(//*[contains(text(),"${questionText}")]//following::button)[1]`;
   }
 
   getDropdownOption(optionText) {
-    return `//span[text()="${optionText}"]`;
+    return `//span[contains(text(),"${optionText}")]`;
   }
 
   getTaskByName(taskName) {
@@ -82,31 +55,43 @@ export class CreateRequest {
     return `//span[text()="${questionText}"]//following::input`;
   }
 
+  getRadioOption(questionText, optionText) {
+  return `//*[contains(text(),"${questionText}")]//following::*[contains(text(),"${optionText}")]`;
+}
 
-  getWorkflowLocator(workflowName) {
-    return `//span[text()="${workflowName}"]`;
+  getSelectByQuestion(questionText) {
+    return `//*[contains(text(),"${questionText}")]//following::select[1]`;
   }
 
-  // ===========================
-  // MAIN FLOW
-  // ===========================
+  /* ===========================
+     MAIN FLOW
+  =========================== */
+
   async CreateNewRequest(data) {
+    // Close guide popup if present
+    if (await this.keywords.isVisible(this.closeGuideIcon, 5000)) {
+      await this.keywords.click(this.closeGuideIcon, 'Close Guide');
+    }
 
-  if (await this.keywords.isVisible(this.closeGuideIcon, 10000)) {
-    await this.keywords.click(this.closeGuideIcon, 'Close Guide Icon');
-  }
+    await this.keywords.click(this.CreateRequestBtn, 'Create Request');
 
-  await this.keywords.click(this.CreateRequestBtn, 'Create Request');
+    await this.keywords.click(
+      this.getWorkflowLocator(data.WorkflowName),
+      `Select Workflow → ${data.WorkflowName}`
+    );
 
-  await this.keywords.click(
-    this.getWorkflowLocator(data.WorkflowName),
-    `Select Workflow - ${data.WorkflowName}`
-  );
+    await this.keywords.click(this.ContinueButton, 'Continue');
 
-  await this.keywords.click(this.ConitnueRequestBtn, 'Continue');
+    /* ===========================
+       INTAKE QUESTIONS (FIXED)
+    =========================== */
 
-  // -------- Intake Questions --------
+   /* ===========================
+   INTAKE QUESTIONS (STRAIGHT)
+=========================== */
 
+// SECTION 1 → TEXT
+if (data.Section1QueName && data.Section1Answer) {
   await this.keywords.fill(
     this.getQuestionInput(data.Section1QueName),
     data.Section1Answer,
@@ -114,7 +99,10 @@ export class CreateRequest {
   );
 
   await this.keywords.click(this.ContinueButton, 'Continue');
+}
 
+// SECTION 2 → DROPDOWN
+if (data.Section2QueName && data.Section2Answer) {
   await this.keywords.click(
     this.getDropdownByQuestion(data.Section2QueName),
     data.Section2QueName
@@ -126,129 +114,125 @@ export class CreateRequest {
   );
 
   await this.keywords.click(this.ContinueButton, 'Continue');
+}
 
+// SECTION 3 → RADIO
+if (data.Section3QueName && data.Section3Answer) {
   await this.keywords.click(
-    this.getDropdownOption(data.Section3Answer),
-    data.Section3Answer
+    this.getRadioOption(
+      data.Section3QueName,
+      data.Section3Answer
+    ),
+    `${data.Section3QueName} → ${data.Section3Answer}`
   );
 
   await this.keywords.click(this.ContinueButton, 'Continue');
+}
 
+// SECTION 4 → DATE
+if (data.Section4QueName && data.Section4Answer) {
   await this.keywords.fill(
-    this.getTaskQuestionInput(data.Section4QueName),
+    this.getDateInputByQuestion(data.Section4QueName),
     data.Section4Answer,
     data.Section4QueName
   );
 
   await this.keywords.click(this.SubmitAns, 'Submit');
-
-  await this.keywords.waitUntilVisible(this.SuccessMsg, data.WorkflowPopup);
-
-  await this.keywords.click(this.GotoReqDetails, 'Go To Request Details');
-
-  await this.handleAllTasks(data);
 }
+  
+    await this.keywords.waitUntilVisible(
+      this.SuccessMsg,
+      data.WorkflowPopup
+    );
 
+    // await this.keywords.click(
+    //   this.GotoReqDetails,
+    //   'Go To Request Details'
+    // );
 
-  // ===========================
-  // TASK EXECUTION LOOP
-  // ===========================
+    await this.handleAllTasks(data);
+  }
+
+  /* ===========================
+     TASK EXECUTION
+  =========================== */
+
   async handleAllTasks(data) {
-    const maxIterations = 10; // safety guard
-    let iteration = 0;
+    const tasks = [
+      data.Task1Name,
+      data.Task2Name,
+      data.Task3Name
+    ].filter(Boolean);
 
-    while (iteration < maxIterations) {
-      iteration++;
+    for (const taskName of tasks) {
+      const taskLocator = this.getTaskByName(taskName);
 
-      if (await this.keywords.isVisible(this.findTask1)) {
-        await this.handleTask1(data);
+      if (await this.keywords.isVisible(taskLocator, 5000)) {
+        await this.keywords.click(
+          this.StartButton,
+          `Start ${taskName}`
+        );
+
+        await this.handleTaskByName(taskName, data);
         await this.waitAfterTask();
-        continue;
       }
-
-      if (await this.keywords.isVisible(this.findTask2)) {
-        await this.handleTask2(data);
-        await this.waitAfterTask();
-        continue;
-      }
-
-      if (await this.keywords.isVisible(this.findTask3)) {
-        await this.handleTask3(data);
-        await this.waitAfterTask();
-        continue;
-      }
-
-      console.log('✅ All tasks completed');
-      break;
     }
+
+    console.log('✅ All tasks completed');
   }
 
   async waitAfterTask() {
     await this.page.waitForTimeout(2000);
   }
 
-  // ===========================
-  // TASK HANDLERS
-  // ===========================
-  async handleTask1(data) {
-  await this.keywords.click(this.StartButton, `Start ${data.Task1Name}`);
+  /* ===========================
+     GENERIC TASK HANDLER
+  =========================== */
 
-  await this.keywords.waitUntilVisible(
-    this.getTaskQuestionInput(data.Task1Section1Que1),
-    data.Task1Section1Que1
-  );
+  async handleTaskByName(taskName, data) {
+    let question = '';
+    let answer = '';
 
-  await this.keywords.fill(
-    this.getTaskQuestionInput(data.Task1Section1Que1),
-    data.Task1Answer,
-    data.Task1Section1Que1
-  );
+    switch (taskName) {
+      case data.Task1Name:
+        question = data.Task1Section1Que1;
+        answer = data.Task1Answer;
+        break;
 
-  await this.approveTask(data.Task1Name);
-}
+      case data.Task2Name:
+        question = data.Task2Section1Que1;
+        answer = data.Task2Answer;
+        break;
 
+      case data.Task3Name:
+        question = data.Task3Section1Que1;
+        answer = data.Task3Answer;
+        break;
+    }
 
-  async handleTask2(data) {
-  await this.keywords.click(this.StartButton, `Start ${data.Task2Name}`);
+    await this.keywords.waitUntilVisible(
+      this.getTaskQuestionInput(question),
+      question
+    );
 
-  await this.keywords.waitUntilVisible(
-    this.getTaskQuestionInput(data.Task2Section1Que1),
-    data.Task2Section1Que1
-  );
+    await this.keywords.fill(
+      this.getTaskQuestionInput(question),
+      answer,
+      question
+    );
 
-  await this.keywords.fill(
-    this.getTaskQuestionInput(data.Task2Section1Que1),
-    data.Task2Answer,
-    data.Task2Section1Que1
-  );
+    await this.approveTask(taskName);
+  }
 
-  await this.approveTask(data.Task2Name);
-}
+  /* ===========================
+     APPROVAL
+  =========================== */
 
-
-  async handleTask3(data) {
-  await this.keywords.click(this.StartButton, `Start ${data.Task3Name}`);
-
-  await this.keywords.waitUntilVisible(
-    this.getTaskQuestionInput(data.Task3Section1Que1),
-    data.Task3Section1Que1
-  );
-
-  await this.keywords.fill(
-    this.getTaskQuestionInput(data.Task3Section1Que1),
-    data.Task3Answer,
-    data.Task3Section1Que1
-  );
-
-  await this.approveTask(data.Task3Name);
-}
-
-
-  // ===========================
-  // APPROVAL
-  // ===========================
   async approveTask(taskName) {
-    await this.keywords.click(this.ApproveBtn, `Approve ${taskName}`);
+    await this.keywords.click(
+      this.ApproveBtn,
+      `Approve ${taskName}`
+    );
 
     let toastText = '';
     try {
@@ -258,18 +242,6 @@ export class CreateRequest {
       );
     } catch {}
 
-    console.log(`ℹ️ ${taskName} toast: ${toastText}`);
-
-    const successWords = ['approved', 'success', 'completed'];
-
-    if (
-      !successWords.some(word =>
-        toastText.toLowerCase().includes(word)
-      )
-    ) {
-      console.warn(`⚠️ ${taskName} approval message not clear`);
-    } else {
-      console.log(`✅ ${taskName} completed`);
-    }
+    console.log(`ℹ️ ${taskName} toast → ${toastText}`);
   }
 }

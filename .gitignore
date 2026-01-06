@@ -1,6 +1,5 @@
 node_modules
 test-results
-package-lock.json
 metadata.json
 .env
 .vscode

@@ -1,98 +1,93 @@
-const os = require('node:os');
-const path = require('node:path');
-const { mkdirSync } = require('fs');
-const dotenv = require('dotenv');
-const {
-  browserMode,
+import os from 'node:os';
+import fs from 'fs';
+import path from 'path';
+import dotenv from 'dotenv';
+
+import {
   browserName,
+  browserMode,
+  parallelMode,
+  testTimeout,
   expectTimeout,
   numberOfWorkers,
-  parallelMode
-} = require('./config/testConfiguration');
+} from './config/testConfiguration.js';
 
-// Load environment variables
 dotenv.config();
 dotenv.config({ path: '.env.aws' });
 
-// Timestamp for Allure results
-const timestamp = new Date();
-const shortDate = `${timestamp.getFullYear()}-${String(timestamp.getMonth() + 1).padStart(2, '0')}-${String(timestamp.getDate()).padStart(2, '0')}`;
-const shortTime = `${String(timestamp.getHours()).padStart(2, '0')}-${String(timestamp.getMinutes()).padStart(2, '0')}`;
-const formattedTimestamp = `${shortDate}_${shortTime}`;
+/* ---------------- TIMESTAMP ---------------- */
+const now = new Date();
+const date = now.toISOString().split('T')[0];
+const time = `${now.getHours()}-${now.getMinutes()}`;
+const timestamp = `${date}_${time}`;
 
+/* ---------------- ALLURE DIR ---------------- */
 const allureResultsDir = path.join(
+  process.cwd(),
   'reports',
   'allure-results',
-  `Test_Report-${formattedTimestamp}`
+  `Test_Report-${timestamp}`
 );
 
-// const playwrightOutputDir = path.join(
-//   'reports',
-//   'playwright-output',
-//   `run-${formattedTimestamp}`
-// );
-
-
-// Ensure results directory exists
-mkdirSync(allureResultsDir, { recursive: true });
+// Ensure directory exists
+fs.mkdirSync(allureResultsDir, { recursive: true });
 
 /** @type {import('@playwright/test').PlaywrightTestConfig} */
 const config = {
   testDir: './runner',
-  outputDir: allureResultsDir,
-  globalTeardown: './global-teardown.js',
-  retries: 0,
-  forbidOnly: true,
-  fullyParallel: parallelMode(),
-  // Increased test timeout to accommodate longer per-step waits in keywords
-  // Some helper methods use waits up to 120s; ensure test-level timeout
-  // exceeds those values.
-  timeout: 120000,
 
+  forbidOnly: true,
+  retries: 0,
+
+  // ✅ Global teardown
+  globalTeardown: './global-teardown.js',
+
+  fullyParallel: parallelMode(),
+  workers: numberOfWorkers(),
+  timeout: testTimeout() * 1000,
   expect: {
-    timeout: expectTimeout(),
+    timeout: expectTimeout() * 1000,
   },
 
-  // outputDir: playwrightOutputDir, // ✅ SEPARATE DIR
+  /* ---------------- REPORTERS ---------------- */
+  reporter: [
+    // ✅ JSON (for mail)
+    ['json', { outputFile: 'test-results.json' }],
 
-reporter: [
-  [
-    'allure-playwright',
-    {
-      detail: true,
-      resultsDir: allureResultsDir,
-      suiteTitle: false,
-      environmentInfo: {
-        os_platform: os.platform(),
-        os_release: os.release(),
-        os_version: os.version(),
-        NodeVersion: process.version,
+    // ✅ Allure (timestamped under reports/)
+    [
+      'allure-playwright',
+      {
+        resultsDir: allureResultsDir,
+        detail: true,
+        suiteTitle: false,
+        environmentInfo: {
+          OS: os.platform(),
+          OS_Version: os.release(),
+          Node: process.version,
+          Browser: browserName(),
+        },
       },
-    },
+    ],
   ],
-],
 
-
+  /* ---------------- USE ---------------- */
   use: {
     browserName: browserName(),
+    headless: browserMode(),
 
-    // ✅ Reuse workflow state
-    // storageState: 'storage/workflow-state.json',
-
-    headless: !!process.env.CI,
     viewport: null,
-    actionTimeout: 5000,
+    actionTimeout: expectTimeout() * 1000,
     navigationTimeout: 60000,
-    video: 'retain-on-failure', // or 'on', 'off'
-    // screenshot: 'only-on-failure',
+
+    screenshot: 'only-on-failure',
+    video: 'retain-on-failure',
     trace: 'retain-on-failure',
 
     launchOptions: {
-      args: ['--start-maximized'],
+      args: browserName() === 'chromium' ? ['--start-maximized'] : [],
     },
   },
-
-  workers: numberOfWorkers(),
 
   projects: [
     {
@@ -104,4 +99,4 @@ reporter: [
   ],
 };
 
-module.exports = config;
+export default config;
